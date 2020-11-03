@@ -26,32 +26,32 @@
     </span>
   </div>
 
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
 
 <script>
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   var firebaseConfig = {
-    apiKey: "AIzaSyBDld800torQznA2YJ67z6kDjGfFCNqRjg",
-    authDomain: "test-digitalent-be-23.firebaseapp.com",
-    databaseURL: "https://test-digitalent-be-23.firebaseio.com",
-    projectId: "test-digitalent-be-23",
-    storageBucket: "test-digitalent-be-23.appspot.com",
-    messagingSenderId: "103019543650",
-    appId: "1:103019543650:web:1621ca0e105b4184f7653b",
-    measurementId: "G-5QNR1FETDH"
+    apiKey: "AIzaSyC8C6bd3qjiKzQ38km3Qps4gha658p1HXY",
+    authDomain: "digitalent-be-23-fca85.firebaseapp.com",
+    databaseURL: "https://digitalent-be-23-fca85.firebaseio.com",
+    projectId: "digitalent-be-23-fca85",
+    storageBucket: "digitalent-be-23-fca85.appspot.com",
+    messagingSenderId: "450545332655",
+    appId: "1:450545332655:web:1a61e88429ffca937dbf5a",
+    measurementId: "G-TCSQ5D74F0"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  
+
   const antrianRef = firebase.database().ref('antrian');
   let currentAntrian;
-  antrianRef.on('value', snapshot => {
+  antrianRef.on('value', function(snapshot) {
     const antrian = snapshot.val();
     currentAntrian = antrian.find(item => item != null && item.status === false)
     document.getElementById('txt-antrian').innerText = currentAntrian.id
